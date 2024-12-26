@@ -10,7 +10,9 @@ import Footer from '../components/common/footer1';
 import ExploreMore from "../components/core/HomePage/ExploreMore"
 import InstructorSection from '../components/core/HomePage/InstructorSection'
 import ReviewSlider from "../components/common/ReviewSlider"
-const Home = () => {
+const Home = () => { 
+  // Navbar,footer ,menu page-2 + maps
+  // 2 event ,home ,contact us ,about us ,video 
   return (
     <div className="w-full h-full">
       {/* Navbar */}

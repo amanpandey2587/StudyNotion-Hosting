@@ -34,6 +34,19 @@ body {
 *:hover::-webkit-scrollbar-thumb {
   visibility: visible;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 3s ease-in-out;
+}
+
 
 /* Hide default styling of details/summary */
 details > summary {

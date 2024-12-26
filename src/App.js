@@ -38,7 +38,7 @@ function App() {
 
   return (
    <div className="max-w-screen overflow-x-hidden min-h-screen bg-richblack-900 flex flex-col font-inter">
-    <Navbar/>
+    {/* <Navbar/> */}
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="catalog/:catalogName" element={<Catalog/>} />
