@@ -85,7 +85,7 @@ const {
     const toastId = toast.loading("Loading...");
     console.log(data);
     try {
-      const response = await axios.post("http://localhost:4000/api/v1/course/createCourse", data, {
+      const response = await axios.post(CREATE_COURSE_API, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

@@ -5,10 +5,10 @@ import { useSelector } from "react-redux";
 const initialState = {
   courseSectionData: [],
   courseEntireData: [],
-  completedLectures: [], // Will store completed video IDs
+  completedLectures: [],
   totalNoOfLectures: 0,
-  loading: false, // To manage API loading state
-  error: null, // To handle API errors
+  loading: false, 
+  error: null,
 };
 
 const viewCourseSlice = createSlice({
@@ -25,13 +25,11 @@ const viewCourseSlice = createSlice({
       state.totalNoOfLectures = action.payload;
     },
     setCompletedLectures: (state, action) => {
-      // Populate completedLectures with user progress data (array of video IDs)
       state.completedLectures = action.payload;
     },
     updateCompletedLectures: (state, action) => {
       const subSectionId = action.payload;
 
-      // Ensure completedLectures is always an array
       if (!Array.isArray(state.completedLectures)) {
         console.error(
           "completedLectures is not an array. Initializing it as an empty array."
@@ -39,7 +37,6 @@ const viewCourseSlice = createSlice({
         state.completedLectures = [];
       }
 
-      // Add subSectionId if not already present
       if (!state.completedLectures.includes(subSectionId)) {
         state.completedLectures = [...state.completedLectures, subSectionId];
       }
@@ -65,5 +62,4 @@ export const {
 
 export default viewCourseSlice.reducer;
 
-// Async thunk to fetch completed videos
 

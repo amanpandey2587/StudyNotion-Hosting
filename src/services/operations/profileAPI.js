@@ -35,19 +35,21 @@ export function getUserDetails(token, navigate) {
 }
 
 export async function getUserEnrolledCourses(token) {
-  const toastId = toast.loading("Loading...")
   let result = []
   try {
     console.log("BEFORE Calling BACKEND API FOR ENROLLED COURSES");
     
-    const response = await axios.get(
-      'http://localhost:4000/api/v1/profile/getEnrolledCourses', 
-      {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      }
-    );
+    // const response = await axios.get(
+    //   'http://localhost:4000/api/v1/profile/getEnrolledCourses', 
+    //   {
+    //     headers: {
+    //       'Authorization': `Bearer ${token}`
+    //     }
+    //   }
+    // );
+    const response=await apiConnector("GET",GET_USER_ENROLLED_COURSES_API,null,{
+      'Authorization': `Bearer ${token}`
+    })
 
     console.log("AFTER Calling BACKEND API FOR ENROLLED COURSES");
     
@@ -59,7 +61,6 @@ export async function getUserEnrolledCourses(token) {
     console.log("GET_USER_ENROLLED_COURSES_API API ERROR............", error)
     toast.error("Could Not Get Enrolled Courses")
   }
-  toast.dismiss(toastId)
   return result
 }
 
